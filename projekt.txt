@@ -1,0 +1,106 @@
+Rahmenbedingungen:
+- Verbindung behandelter getrennter Stoffgebiete auf ein höheres Niveau bringen und praktisch umsetzen
+- Dokumentieren Wie und Was wir gemacht haben -> Pflichtenheft (Adressen bzw. Unternehmen ist die Schule)
+	-> Pflichtenheft wird zur Produktbegleiteten Dokumentation erweitert
+	-> mind. 2 modellierungen
+	-> Umfang ca. 10 Seiten
+	-> Aufschreiben was man jeden Tag macht
+	-> Materialien aus dem Netz = Quelle mit Datum und Uhrzeit
+	-> Deckblatt
+	-> bei Hilfe von dritten, dies dokumentieren!
+- Datenbank -> Relationenmodell
+- Software -> Klassendiagramm, Struktogramm, Aktivitätsdiagramm
+	-> Darstellung der Oberfläche mit Erklärung für Bedienweise der Software
+	-> Prozedere des Startens der Datenbankanbindung auflisten
+- Thema max. 2x 60 Zeichen (inklusive Leerzeichen)!
+- Themenbereiche mit auf die Dokumentation drauf schreiben, welche bewertet werden sollen
+
+Notenbuch
+-Kurshalbjahresnoten berechnen
+-für berufliche Gymnasien
+-Datenbank -> 6 Fachrichtungen (Tabellen) mit jeweiligen Schülern und deren Noten 
+
+Leistungsfächer berufliche Gymnasien:
+agrarwissenschaft / agrartechnik
+Biotechnologie / Biotechnik
+Ernährungswissenschaft / Ernährungslehre
+Gesundheit und Sozialwesen / Gesundheit und Soziales
+Informations & Kommunikationstechnologie / Informatiksysteme
+Technikwissenschaft / Spezialisierung -> Maschinenbautechnik / Bautechnik
+Wirtschaftswissenschaften / Volks und Betriebswirtschaftslehre mit Rechnungswesen
+
+Was mache ich?
+Thema: "Software mit Datenbankanbindung zur Verwaltung von Schulnoten"
+
+Tag 1:
+Informationen sammeln über Aufbau des Notenbuches
+Konzept entwickeln für die Datenbank: siehe Excel Datei
+
+Tag 2:
+Anfang Projektbegleitende Dokumentation: siehe Word Dokument
+Start der Oberflächenentwicklung
+-> Menu Bar Hinzugefügt
+-> Titel auf die Oberfläche hinzugefügt
+-> Anwendungsnamen auf "EasyGrades" festgelegt
+Vervollständigung des Konzeptes für die Datenbank
+Start Datenbankerstellung
+-> Tabelle "schueler" hinzugefügt
+
+Tag 3:
+Pflichtenheft beginn:
+->Deckblatt design / -> Logo Prototyp erstellt
+->Unternehmenscharakteristik inkl. Ist-Zustand und Schwachstellenanalyse
+->Problembeschreibung
+
+Tag 4:
+
+Pflichtenheft:
+->Schwachstellen in Organisationsstruktur
+->Schwachstellen in IT-Struktur
+->Zielsetzungen
+Programm:
+->Oberflächenprototyp
+->Tabelle für Datenbank eingefügt
+->ComboBox zum auswählen des jeweilligen berufl. Gym.
+->Logo auf Oberfläche eingefügt
+
+Tag 5:
+->Produktanforderungen Pflichtenheft
+->Anmeldeformuler mit Schüler, Lehrer, Admin -> Oberfläche dafür
+
+Tag 6:
+->Anmeldeform Combobox -> Auswahl Schüler, Lehrer Admin
+->Eingabefeld Nutzername und Eingabefeld Password -> Textchart = *
+->Logo eingefügt
+->Passwortüberprüfung mit Textdatei in welcher passwort steht implementiert
+
+Tag 7:
+Passwortüberprüfung mit Textdatei Fehlersuche -> Mein Programm hat keine Lust die Text Datei zu lesen
+
+Tag 8:
+-> Gantt-Diagramm
+-Aktivitätenliste:
+	-Datenbank Entwurf
+	-		Erstellung
+	-		Einpflege
+	-Sofware Oberfläche
+	-		Implementierung
+	-		Datenbankanbindung
+	-Pflichtenheft Entwurf
+	-		Vervollständigung
+	-		Projektbegleitende Dokumentation
+	-Test und Abschluss
+Zeitlich geordnet:
+-Datenbankentwurf
+-Pflichtenheftentwurf
+-Software Oberfläche
+-Software Implementierung
+-Datenbank Erstellung
+-Pflichtenheftvervollständigung
+-Datenbank Einplege
+-Software Datenbankanbindung
+-Projektbegleitende Doku.
+-Test und Abschluss
+->Form 2 design und logout button mit confirmation -> noch nicht fehlerfrei
+
+

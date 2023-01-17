@@ -1,0 +1,58 @@
+object FormMain: TFormMain
+  Left = 419
+  Height = 735
+  Top = 213
+  Width = 1437
+  Caption = 'FormMain'
+  ClientHeight = 735
+  ClientWidth = 1437
+  LCLVersion = '1.8.4.0'
+  object Btn_close: TButton
+    Left = 1344
+    Height = 25
+    Top = 696
+    Width = 75
+    Caption = 'Btn_close'
+    OnClick = Btn_closeClick
+    TabOrder = 0
+  end
+  object BitBtn1: TBitBtn
+    Left = 1392
+    Height = 38
+    Top = 8
+    Width = 38
+    Kind = bkClose
+    OnClick = BitBtn1Click
+    TabOrder = 1
+  end
+  object Label1: TLabel
+    Left = 1328
+    Height = 21
+    Top = 16
+    Width = 58
+    Caption = 'Logout:'
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -16
+    Font.Name = '@Malgun Gothic'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object DBGrid1: TDBGrid
+    Left = 10
+    Height = 713
+    Top = 8
+    Width = 982
+    Color = clWindow
+    Columns = <>
+    TabOrder = 2
+  end
+  object Shape1: TShape
+    Left = 1008
+    Height = 713
+    Top = 8
+    Width = 1
+  end
+end
