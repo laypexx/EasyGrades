@@ -52,7 +52,10 @@ var
 
 procedure TFormLogin.Btn_exitClick(Sender: TObject);
 begin
-  application.terminate;
+  if Dialogs.MessageDlg('Wirklich beenden?',
+    mtConfirmation, [mbYes, mbNo], 0, mbYes) = mrYes
+    then
+      application.terminate;
 end;
 
 procedure TFormLogin.Btn_loginClick(Sender: TObject);
@@ -63,24 +66,24 @@ begin
            if TEditUser.text = 'admin'
               then
                   begin
-                  //AssignFile(adminsTXT, '\txt\admins.txt');
-                  //Reset(adminsTXT);
-                  //ReadLn(adminsTXT,password);
-                  //CloseFile(adminsTXT);
-                  //password := LoadFromFile('\txt\admins.txt');
+                  //Hier Passwort Verschlüsselung evtl.
+                    //hier passwort aus textfile holen und überprüfen mit eingegebenem
                     password := '123';
                   if teditpassword.text = password
                      then
                          showmessage('Erfolgreich eingeloggt!');
-                         FormLogin.visible := false;
-                         FormMain.visible := true;
+                         FormLogin.Hide;
+                         FormMain.Show;
+                         TeditUser.Clear;
+                         TeditPassword.Clear;
+                         CBkontotyp.text;
                   end
            else
               showmessage('Anmeldename oder Passwort Falsch! Bitte erneut versuchen.');
               TeditUser.Clear;
               TeditPassword.Clear;
          end
-  else showmessage('Bitte Eingabefelder ausfüllen!');
+  else showmessage('Bitte Angaben prüfen!');
 end;
 
 procedure TFormLogin.FormActivate(Sender: TObject);

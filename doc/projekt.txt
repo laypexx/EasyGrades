@@ -103,4 +103,11 @@ Zeitlich geordnet:
 -Test und Abschluss
 ->Form 2 design und logout button mit confirmation -> noch nicht fehlerfrei
 
+Tag 9:
+-> Lösung MessageBox bzw MessageDialog
+-Funktioniert -> BitButton hat immer wieder den Prozess abgebrochen und ich hab fehler gesucht wie ein oxe 50 min lang
+->einfügen combobox auf FormMain für Auswahl des Leistungskurses
+->auswahl 
+
+
 
