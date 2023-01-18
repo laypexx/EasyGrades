@@ -7,3 +7,9 @@ Informatikprojekt Klasse 13 - 2023
 - Themenbereiche: Softwareenticklung & Projektmanagement
 - EasyGrades ist ein Notenbuch mit Datenbankanbindung in Pascal geschrieben
 
+### Installation - Windows only!
+
+- Repository klonen
+- Ordner -> "./src/EasyGrades/"
+- Verknüpfung von EasyGrades.exe erstellen
+- Verknüpfung ausführen
