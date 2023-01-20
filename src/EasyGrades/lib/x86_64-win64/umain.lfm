@@ -1,7 +1,7 @@
 object FormMain: TFormMain
-  Left = 360
+  Left = 191
   Height = 756
-  Top = 192
+  Top = 229
   Width = 1437
   Caption = 'EasyGrades - Digitales Notenbuch'
   ClientHeight = 736
@@ -138,6 +138,56 @@ object FormMain: TFormMain
     )
     TabOrder = 4
     Text = 'Bitte auswählen...'
+  end
+  object btn_addstudent: TButton
+    Left = 1022
+    Height = 25
+    Top = 576
+    Width = 160
+    Caption = 'Schüler hinzufügen'
+    OnClick = btn_addstudentClick
+    TabOrder = 5
+  end
+  object btn_removestudent: TButton
+    Left = 1022
+    Height = 25
+    Top = 616
+    Width = 160
+    Caption = 'Schüler entfernen'
+    OnClick = btn_removestudentClick
+    TabOrder = 6
+  end
+  object Label4: TLabel
+    Left = 1022
+    Height = 21
+    Top = 536
+    Width = 233
+    Caption = 'Schüler und Lehrer Verwalten:'
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -16
+    Font.Name = '@Malgun Gothic'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object Button1: TButton
+    Left = 1208
+    Height = 25
+    Top = 576
+    Width = 160
+    Caption = 'Lehrer hinzufügen'
+    Enabled = False
+    TabOrder = 7
+  end
+  object Button2: TButton
+    Left = 1208
+    Height = 25
+    Top = 616
+    Width = 160
+    Caption = 'Lehrer entfernen'
+    TabOrder = 8
   end
   object MainMenu1: TMainMenu
     left = 1016

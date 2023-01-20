@@ -1,7 +1,7 @@
-object FormAddStudents: TFormAddStudents
-  Left = 837
+object FormAddStudent: TFormAddStudent
+  Left = 1128
   Height = 282
-  Top = 289
+  Top = 344
   Width = 415
   Caption = 'EasyGrades - Digitales Notenbuch'
   ClientHeight = 282
@@ -98,7 +98,6 @@ object FormAddStudents: TFormAddStudents
     Top = 48
     Width = 224
     TabOrder = 0
-    Text = 'Ed_name'
   end
   object Edit_vorname: TEdit
     Left = 152
@@ -106,7 +105,6 @@ object FormAddStudents: TFormAddStudents
     Top = 80
     Width = 224
     TabOrder = 1
-    Text = 'Edit_vorname'
   end
   object Cb_klasse: TComboBox
     Left = 152
@@ -114,8 +112,13 @@ object FormAddStudents: TFormAddStudents
     Top = 112
     Width = 224
     ItemHeight = 15
+    Items.Strings = (
+      'Klasse 11'
+      'Klasse 12'
+      'Klasse 13'
+    )
     TabOrder = 2
-    Text = 'Cb_klasse'
+    Text = 'Klassenstufe auswählen...'
   end
   object Cb_lk1: TComboBox
     Left = 152
@@ -123,8 +126,17 @@ object FormAddStudents: TFormAddStudents
     Top = 144
     Width = 224
     ItemHeight = 15
+    Items.Strings = (
+      'Agrartechnik'
+      'Biotechnik'
+      'Ernährungslehre'
+      'Gesundheit und Soziales'
+      'Informatiksysteme'
+      'Maschinenbautechnik / Bautechnik'
+      'Volks und Betriebswirtschaftslehre mit Rechnungswesen'
+    )
     TabOrder = 3
-    Text = 'Cb_lk1'
+    Text = 'LK 1 auswählen...'
   end
   object cb_lk2: TComboBox
     Left = 152
@@ -132,8 +144,13 @@ object FormAddStudents: TFormAddStudents
     Top = 178
     Width = 224
     ItemHeight = 15
+    Items.Strings = (
+      'Deutsch'
+      'Mathe'
+      'Englisch'
+    )
     TabOrder = 4
-    Text = 'cb_lk2'
+    Text = 'LK 2 auswählen...'
   end
   object btn_add: TButton
     Left = 128
@@ -149,6 +166,7 @@ object FormAddStudents: TFormAddStudents
     Top = 248
     Width = 75
     Caption = 'Abbrechen'
+    OnClick = btn_undoClick
     TabOrder = 6
   end
 end

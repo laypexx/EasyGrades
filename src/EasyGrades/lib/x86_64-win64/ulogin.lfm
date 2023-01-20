@@ -3685,7 +3685,7 @@ object FormLogin: TFormLogin
     Height = 25
     Top = 480
     Width = 75
-    Caption = 'Verlassen'
+    Caption = 'Beenden'
     OnClick = Btn_exitClick
     TabOrder = 4
   end

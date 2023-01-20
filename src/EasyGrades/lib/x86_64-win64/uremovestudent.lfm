@@ -1,0 +1,86 @@
+object FormRemoveStudent: TFormRemoveStudent
+  Left = 394
+  Height = 240
+  Top = 236
+  Width = 320
+  Caption = 'EasyGrades - Digitales Notenbuch'
+  ClientHeight = 240
+  ClientWidth = 320
+  LCLVersion = '1.8.4.0'
+  object Label1: TLabel
+    Left = 10
+    Height = 21
+    Top = 10
+    Width = 141
+    Caption = 'Schüler entfernen:'
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -16
+    Font.Name = '@Malgun Gothic'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object Ed_nachname: TEdit
+    Left = 128
+    Height = 23
+    Top = 48
+    Width = 176
+    TabOrder = 0
+  end
+  object Label2: TLabel
+    Left = 24
+    Height = 17
+    Top = 54
+    Width = 67
+    Caption = 'Nachname:'
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -13
+    Font.Name = '@Malgun Gothic'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentColor = False
+    ParentFont = False
+  end
+  object cb_student: TComboBox
+    Left = 10
+    Height = 23
+    Top = 128
+    Width = 294
+    ItemHeight = 15
+    TabOrder = 1
+    Text = 'cb_student'
+  end
+  object Label3: TLabel
+    Left = 10
+    Height = 17
+    Top = 104
+    Width = 294
+    Caption = 'Schüler auswählen welcher entfernt werden soll:'
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -13
+    Font.Name = '@Malgun Gothic'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentColor = False
+    ParentFont = False
+  end
+  object Btn_remove: TButton
+    Left = 80
+    Height = 25
+    Top = 168
+    Width = 152
+    Caption = 'Schüler entfernen'
+    TabOrder = 2
+  end
+  object Btn_cancel: TButton
+    Left = 232
+    Height = 25
+    Top = 208
+    Width = 75
+    Caption = 'Abbrechen'
+    OnClick = Btn_cancelClick
+    TabOrder = 3
+  end
+end

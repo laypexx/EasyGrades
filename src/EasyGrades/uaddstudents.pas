@@ -9,9 +9,9 @@ uses
 
 type
 
-  { TFormAddStudents }
+  { TFormAddStudent }
 
-  TFormAddStudents = class(TForm)
+  TFormAddStudent = class(TForm)
     btn_add: TButton;
     btn_undo: TButton;
     Cb_klasse: TComboBox;
@@ -25,6 +25,7 @@ type
     Label4: TLabel;
     Label5: TLabel;
     Label6: TLabel;
+    procedure btn_undoClick(Sender: TObject);
   private
 
   public
@@ -32,11 +33,23 @@ type
   end;
 
 var
-  FormAddStudents: TFormAddStudents;
+  FormAddStudent: TFormAddStudent;
 
 implementation
 
 {$R *.lfm}
+
+{ TFormAddStudent }
+
+uses uMain;
+
+procedure TFormAddStudent.btn_undoClick(Sender: TObject);
+begin
+  if Dialogs.MessageDlg('Wirklich abbrechen?',
+    mtConfirmation, [mbYes, mbNo], 0, mbYes) = mrYes
+    then
+      FormAddStudent.Hide;
+end;
 
 end.
 

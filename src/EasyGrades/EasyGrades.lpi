@@ -27,7 +27,7 @@
         <PackageName Value="LCL"/>
       </Item1>
     </RequiredPackages>
-    <Units Count="4">
+    <Units Count="5">
       <Unit0>
         <Filename Value="EasyGrades.lpr"/>
         <IsPartOfProject Value="True"/>
@@ -51,10 +51,17 @@
       <Unit3>
         <Filename Value="uaddstudents.pas"/>
         <IsPartOfProject Value="True"/>
-        <ComponentName Value="FormAddStudents"/>
+        <ComponentName Value="FormAddStudent"/>
+        <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="uAddStudents"/>
       </Unit3>
+      <Unit4>
+        <Filename Value="uremovestudent.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FormRemoveStudent"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit4>
     </Units>
   </ProjectOptions>
   <CompilerOptions>
