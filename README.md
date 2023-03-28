@@ -6,3 +6,7 @@ Informatikprojekt Klasse 13 - 2023
 - Abdecken von 2 Themenbereichen der Informatik in praktischer Arbeit
 - Themenbereiche: Softwareenticklung & Projektmanagement
 - EasyGrades ist ein Notenbuch mit Datenbankanbindung in Pascal geschrieben
+
+### Projektbegleitende Dokumentation, Pflichtenheft und Benutzerhandbuch
+
+[Pflichtenheft&Projektdokumentation.pdf](doc/Pflichtenheft&Projektdokumentation.pdf)
