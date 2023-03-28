@@ -1,7 +1,7 @@
-object FormAddStudents: TFormAddStudents
-  Left = 1128
+object FormAddStudent: TFormAddStudent
+  Left = 1456
   Height = 282
-  Top = 344
+  Top = 604
   Width = 415
   Caption = 'EasyGrades - Digitales Notenbuch'
   ClientHeight = 282
@@ -25,7 +25,7 @@ object FormAddStudents: TFormAddStudents
   object Label2: TLabel
     Left = 72
     Height = 17
-    Top = 54
+    Top = 86
     Width = 38
     Caption = 'Name:'
     Font.CharSet = ANSI_CHARSET
@@ -39,7 +39,7 @@ object FormAddStudents: TFormAddStudents
   object Label3: TLabel
     Left = 56
     Height = 17
-    Top = 86
+    Top = 54
     Width = 54
     Caption = 'Vorname'
     Font.CharSet = ANSI_CHARSET
@@ -65,25 +65,11 @@ object FormAddStudents: TFormAddStudents
     ParentFont = False
   end
   object Label5: TLabel
-    Left = 22
+    Left = 25
     Height = 17
     Top = 150
-    Width = 88
-    Caption = '1. LK (speziell):'
-    Font.CharSet = ANSI_CHARSET
-    Font.Height = -13
-    Font.Name = '@Malgun Gothic'
-    Font.Pitch = fpVariable
-    Font.Quality = fqDraft
-    ParentColor = False
-    ParentFont = False
-  end
-  object Label6: TLabel
-    Left = 23
-    Height = 17
-    Top = 184
-    Width = 87
-    Caption = '2. LK (normal):'
+    Width = 85
+    Caption = 'Leistungskurs:'
     Font.CharSet = ANSI_CHARSET
     Font.Height = -13
     Font.Name = '@Malgun Gothic'
@@ -95,16 +81,16 @@ object FormAddStudents: TFormAddStudents
   object Ed_name: TEdit
     Left = 152
     Height = 23
-    Top = 48
+    Top = 80
     Width = 224
-    TabOrder = 0
+    TabOrder = 1
   end
   object Edit_vorname: TEdit
     Left = 152
     Height = 23
-    Top = 80
+    Top = 48
     Width = 224
-    TabOrder = 1
+    TabOrder = 0
   end
   object Cb_klasse: TComboBox
     Left = 152
@@ -130,27 +116,13 @@ object FormAddStudents: TFormAddStudents
       'Agrartechnik'
       'Biotechnik'
       'Ernährungslehre'
-      'Gesundheit und Soziales'
       'Informatiksysteme'
-      'Maschinenbautechnik / Bautechnik'
+      'Gesunheit&Soziales'
+      '(Maschinen-)Bautechnik'
       'Volks und Betriebswirtschaftslehre mit Rechnungswesen'
     )
     TabOrder = 3
-    Text = 'LK 1 auswählen...'
-  end
-  object cb_lk2: TComboBox
-    Left = 152
-    Height = 23
-    Top = 178
-    Width = 224
-    ItemHeight = 15
-    Items.Strings = (
-      'Deutsch'
-      'Mathe'
-      'Englisch'
-    )
-    TabOrder = 4
-    Text = 'LK 2 auswählen...'
+    Text = 'LK auswählen...'
   end
   object btn_add: TButton
     Left = 128
@@ -158,7 +130,8 @@ object FormAddStudents: TFormAddStudents
     Top = 224
     Width = 155
     Caption = 'Hinzufügen'
-    TabOrder = 5
+    OnClick = btn_addClick
+    TabOrder = 4
   end
   object btn_undo: TButton
     Left = 328
@@ -167,6 +140,37 @@ object FormAddStudents: TFormAddStudents
     Width = 75
     Caption = 'Abbrechen'
     OnClick = btn_undoClick
-    TabOrder = 6
+    TabOrder = 5
+  end
+  object SQLQaddstudent: TSQLQuery
+    FieldDefs = <>
+    Database = FormMain.ODBCnotenbuch
+    Transaction = FormMain.SQLTransGrid
+    Params = <>
+    left = 184
+  end
+  object SQLScript: TSQLScript
+    DataBase = FormMain.ODBCnotenbuch
+    Transaction = FormMain.SQLTransGrid
+    UseDollarString = False
+    Directives.Strings = (
+      'SET TERM'
+      'COMMIT WORK'
+      'COMMIT RETAIN'
+      'COMMIT'
+      '#IFDEF'
+      '#IFNDEF'
+      '#ELSE'
+      '#ENDIF'
+      '#DEFINE'
+      '#UNDEF'
+      '#UNDEFINE'
+    )
+    Terminator = ';'
+    CommentsinSQL = True
+    UseSetTerm = True
+    UseCommit = True
+    UseDefines = True
+    left = 216
   end
 end

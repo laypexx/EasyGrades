@@ -1,11 +1,17 @@
 object FormMain: TFormMain
-  Left = 191
+  Left = 276
   Height = 756
-  Top = 229
+  Top = 268
   Width = 1437
   Caption = 'EasyGrades - Digitales Notenbuch'
   ClientHeight = 736
   ClientWidth = 1437
+  Font.CharSet = ANSI_CHARSET
+  Font.Color = clBlack
+  Font.Height = -13
+  Font.Name = '@Malgun Gothic'
+  Font.Pitch = fpVariable
+  Font.Quality = fqDraft
   Menu = MainMenu1
   LCLVersion = '1.8.4.0'
   object Btn_close: TButton
@@ -15,9 +21,9 @@ object FormMain: TFormMain
     Width = 75
     Caption = 'Beenden'
     OnClick = Btn_closeClick
-    TabOrder = 0
+    TabOrder = 9
   end
-  object BitBtn1: TBitBtn
+  object Btn_logout: TBitBtn
     Left = 1392
     Height = 38
     Top = 8
@@ -58,8 +64,8 @@ object FormMain: TFormMain
       55FF535755FF535755FF535755FF535755FF535755FF535755FF545856FF5A5E
       5CFF626564FF666968FF676A68FF636765FF6B6E6D8CFFFFFF04
     }
-    OnClick = BitBtn1Click
-    TabOrder = 1
+    OnClick = Btn_logoutClick
+    TabOrder = 10
   end
   object Label1: TLabel
     Left = 1328
@@ -83,7 +89,16 @@ object FormMain: TFormMain
     Width = 982
     Color = clWindow
     Columns = <>
-    TabOrder = 2
+    DataSource = DSgrid
+    DefaultRowHeight = 22
+    Options = [dgEditing, dgTitles, dgIndicator, dgColLines, dgRowLines, dgTabs, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit]
+    TabOrder = 11
+    TitleFont.CharSet = ANSI_CHARSET
+    TitleFont.Color = clBlack
+    TitleFont.Height = -13
+    TitleFont.Name = '@Malgun Gothic'
+    TitleFont.Pitch = fpVariable
+    TitleFont.Quality = fqDraft
   end
   object Shape1: TShape
     Left = 1008
@@ -93,65 +108,67 @@ object FormMain: TFormMain
   end
   object Label2: TLabel
     Left = 1022
-    Height = 15
-    Top = 48
-    Width = 118
+    Height = 17
+    Top = 96
+    Width = 134
     Caption = 'Leistungskursauswahl:'
     ParentColor = False
   end
   object CB_LKauswahl: TComboBox
     Left = 1022
-    Height = 23
-    Top = 72
+    Height = 25
+    Top = 120
     Width = 346
-    ItemHeight = 15
+    ItemHeight = 17
     Items.Strings = (
       'Agrartechnik'
       'Biotechnik'
       'Ernährungslehre'
-      'Gesundheit und Soziales'
       'Informatiksysteme'
-      'Maschinenbautechnik / Bautechnik'
+      'Gesunheit&Soziales'
+      '(Maschinen-)Bautechnik'
       'Volks und Betriebswirtschaftslehre mit Rechnungswesen'
     )
-    TabOrder = 3
-    Text = 'Bitte auswählen...'
+    OnSelect = CB_LKauswahlSelect
+    TabOrder = 1
+    Text = 'Bitte Leistungskurs auswählen...'
   end
   object Label3: TLabel
     Left = 1022
-    Height = 15
-    Top = 112
-    Width = 94
+    Height = 17
+    Top = 160
+    Width = 109
     Caption = 'Klasse auswählen:'
     ParentColor = False
   end
   object CB_klasse: TComboBox
     Left = 1022
-    Height = 23
-    Top = 136
+    Height = 25
+    Top = 184
     Width = 346
-    ItemHeight = 15
+    ItemHeight = 17
     Items.Strings = (
       'Klasse 11'
       'Klasse 12'
       'Klasse 13'
     )
-    TabOrder = 4
-    Text = 'Bitte auswählen...'
+    OnSelect = CB_klasseSelect
+    TabOrder = 2
+    Text = 'Bitte Klasse auswählen...'
   end
   object btn_addstudent: TButton
     Left = 1022
     Height = 25
-    Top = 576
+    Top = 384
     Width = 160
     Caption = 'Schüler hinzufügen'
     OnClick = btn_addstudentClick
     TabOrder = 5
   end
   object btn_removestudent: TButton
-    Left = 1022
+    Left = 1208
     Height = 25
-    Top = 616
+    Top = 384
     Width = 160
     Caption = 'Schüler entfernen'
     OnClick = btn_removestudentClick
@@ -160,9 +177,9 @@ object FormMain: TFormMain
   object Label4: TLabel
     Left = 1022
     Height = 21
-    Top = 536
-    Width = 233
-    Caption = 'Schüler und Lehrer Verwalten:'
+    Top = 352
+    Width = 141
+    Caption = 'Schüler verwalten:'
     Font.CharSet = ANSI_CHARSET
     Font.Height = -16
     Font.Name = '@Malgun Gothic'
@@ -172,30 +189,218 @@ object FormMain: TFormMain
     ParentColor = False
     ParentFont = False
   end
-  object Button1: TButton
-    Left = 1208
+  object Btn_lehrer: TButton
+    Left = 1024
     Height = 25
-    Top = 576
-    Width = 160
-    Caption = 'Lehrer hinzufügen'
-    Enabled = False
+    Top = 464
+    Width = 346
+    Caption = 'Benutzeraccounts bearbeiten'
+    OnClick = Btn_lehrerClick
     TabOrder = 7
   end
-  object Button2: TButton
-    Left = 1208
+  object Label5: TLabel
+    Left = 1022
+    Height = 21
+    Top = 232
+    Width = 133
+    Caption = 'Noten verwalten:'
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -16
+    Font.Name = '@Malgun Gothic'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label6: TLabel
+    Left = 1022
+    Height = 21
+    Top = 432
+    Width = 221
+    Caption = 'Benutzeraccounts verwalten:'
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -16
+    Font.Name = '@Malgun Gothic'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object Btn_addgrade: TButton
+    Left = 1024
     Height = 25
-    Top = 616
-    Width = 160
-    Caption = 'Lehrer entfernen'
+    Top = 264
+    Width = 346
+    Caption = 'Note hinzufügen'
+    OnClick = Btn_addgradeClick
+    TabOrder = 3
+  end
+  object btn_deletegrade: TButton
+    Left = 1022
+    Height = 25
+    Top = 304
+    Width = 346
+    Caption = 'Note löschen'
+    OnClick = btn_deletegradeClick
+    TabOrder = 4
+  end
+  object L_acc: TLabel
+    Left = 1022
+    Height = 17
+    Top = 20
+    Width = 85
+    Caption = 'Accountname:'
+    ParentColor = False
+  end
+  object Label8: TLabel
+    Left = 1022
+    Height = 21
+    Top = 512
+    Width = 169
+    Caption = 'Datenbank verwalten:'
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -16
+    Font.Name = '@Malgun Gothic'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object btn_openDB: TButton
+    Left = 1022
+    Height = 25
+    Top = 544
+    Width = 346
+    Caption = 'PHPmyAdmin Control Panel im Webbrowser öffnen'
+    OnClick = btn_openDBClick
     TabOrder = 8
   end
+  object btn_owngrades: TButton
+    Left = 1022
+    Height = 25
+    Top = 56
+    Width = 346
+    Caption = 'Eigene Noten anzeigen'
+    OnClick = btn_owngradesClick
+    TabOrder = 0
+  end
   object MainMenu1: TMainMenu
-    left = 1016
+    left = 968
     object MenuItem1: TMenuItem
-      Caption = 'MenuItem1'
+      Caption = 'Einstellungen'
+      object MenuItem3: TMenuItem
+        Caption = 'Hintergrund'
+        object MenuItem4: TMenuItem
+          Caption = 'Default'
+          OnClick = MenuItem4Click
+        end
+        object MenuItem5: TMenuItem
+          Caption = 'Blau'
+          OnClick = MenuItem5Click
+        end
+        object MenuItem8: TMenuItem
+          Caption = 'Grün'
+          OnClick = MenuItem8Click
+        end
+        object MenuItem11: TMenuItem
+          Caption = 'Orange'
+          OnClick = MenuItem11Click
+        end
+      end
+      object MI_close: TMenuItem
+        Caption = 'Beenden erzwingen'
+        OnClick = MI_closeClick
+      end
+    end
+    object MenuItem6: TMenuItem
+      Caption = 'Info'
+      object MenuItem9: TMenuItem
+        Caption = 'Benutzeraccount'
+        OnClick = MenuItem9Click
+      end
+      object MenuItem10: TMenuItem
+        Caption = 'Credits'
+        OnClick = MenuItem10Click
+      end
     end
     object MenuItem2: TMenuItem
-      Caption = 'MenuItem2'
+      Caption = 'Hilfe'
+      object MenuItem7: TMenuItem
+        Caption = 'Hilfe beantragen'
+        OnClick = MenuItem7Click
+      end
     end
+  end
+  object ODBCnotenbuch: TODBCConnection
+    Connected = True
+    LoginPrompt = False
+    DatabaseName = 'notenbuch'
+    KeepConnection = False
+    Transaction = SQLTransGrid
+    left = 179
+    top = 1
+  end
+  object SQLTransGrid: TSQLTransaction
+    Active = True
+    Action = caCommit
+    Database = ODBCnotenbuch
+    left = 216
+  end
+  object SQLQgrid: TSQLQuery
+    FieldDefs = <    
+      item
+        Name = 'Vorname'
+        DataType = ftWideString
+        Precision = -1
+        Size = 70
+      end    
+      item
+        Name = 'Nachname'
+        DataType = ftWideString
+        Precision = -1
+        Size = 70
+      end    
+      item
+        Name = 'Fach'
+        DataType = ftWideString
+        Precision = -1
+        Size = 110
+      end    
+      item
+        Name = 'Note'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'Gewichtung'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'Kursnote'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'Zeugnisnote'
+        DataType = ftInteger
+        Precision = -1
+      end>
+    Database = ODBCnotenbuch
+    Transaction = SQLTransGrid
+    SQL.Strings = (
+      ''
+    )
+    Params = <>
+    left = 255
+    top = 2
+  end
+  object DSgrid: TDataSource
+    DataSet = SQLQgrid
+    left = 294
+    top = 2
   end
 end

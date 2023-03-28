@@ -1,0 +1,159 @@
+object Form_AddGrade: TForm_AddGrade
+  Left = 588
+  Height = 235
+  Top = 527
+  Width = 408
+  Caption = 'EasyGrades - Digitales Notenbuch'
+  ClientHeight = 235
+  ClientWidth = 408
+  OnCreate = FormCreate
+  LCLVersion = '1.8.4.0'
+  object Label1: TLabel
+    Left = 10
+    Height = 21
+    Top = 10
+    Width = 135
+    Caption = 'Note hinzufügen:'
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -16
+    Font.Name = '@Malgun Gothic'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label3: TLabel
+    Left = 10
+    Height = 17
+    Top = 40
+    Width = 116
+    Caption = 'Schüler auswählen:'
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -13
+    Font.Name = '@Malgun Gothic'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentColor = False
+    ParentFont = False
+  end
+  object cb_student: TComboBox
+    Left = 10
+    Height = 23
+    Top = 64
+    Width = 390
+    ItemHeight = 15
+    TabOrder = 0
+    Text = 'Schüler auswählen...'
+  end
+  object Label5: TLabel
+    Left = 10
+    Height = 17
+    Top = 104
+    Width = 113
+    Caption = 'Note einschreiben:'
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -13
+    Font.Name = '@Malgun Gothic'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentColor = False
+    ParentFont = False
+  end
+  object ed_grade: TEdit
+    Left = 10
+    Height = 23
+    Top = 128
+    Width = 184
+    TabOrder = 1
+  end
+  object btn_addgrade: TButton
+    Left = 10
+    Height = 23
+    Top = 168
+    Width = 390
+    Caption = 'Note hinzufügen'
+    OnClick = btn_addgradeClick
+    TabOrder = 2
+  end
+  object btn_cancel: TButton
+    Left = 325
+    Height = 25
+    Top = 200
+    Width = 75
+    Caption = 'Abbrechen'
+    OnClick = btn_cancelClick
+    TabOrder = 3
+  end
+  object Label6: TLabel
+    Left = 216
+    Height = 17
+    Top = 104
+    Width = 74
+    Caption = 'Gewichtung:'
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -13
+    Font.Name = '@Malgun Gothic'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentColor = False
+    ParentFont = False
+  end
+  object cb_gewichtung: TComboBox
+    Left = 216
+    Height = 23
+    Top = 128
+    Width = 184
+    ItemHeight = 15
+    Items.Strings = (
+      'Klein'
+      'Gross'
+    )
+    TabOrder = 4
+    Text = 'Gewichtung auswählen...'
+  end
+  object SQLScript: TSQLScript
+    DataBase = FormMain.ODBCnotenbuch
+    Transaction = FormMain.SQLTransGrid
+    UseDollarString = False
+    Directives.Strings = (
+      'SET TERM'
+      'COMMIT WORK'
+      'COMMIT RETAIN'
+      'COMMIT'
+      '#IFDEF'
+      '#IFNDEF'
+      '#ELSE'
+      '#ENDIF'
+      '#DEFINE'
+      '#UNDEF'
+      '#UNDEFINE'
+    )
+    Terminator = ';'
+    CommentsinSQL = True
+    UseSetTerm = True
+    UseCommit = True
+    UseDefines = True
+    left = 176
+    top = 10
+  end
+  object SQLQgrade: TSQLQuery
+    IndexName = 'DEFAULT_ORDER'
+    FieldDefs = <    
+      item
+        Name = 'Name'
+        DataType = ftWideString
+        Precision = -1
+        Size = 70
+      end>
+    Active = True
+    Database = FormMain.ODBCnotenbuch
+    Transaction = FormMain.SQLTransGrid
+    SQL.Strings = (
+      'SELECT * FROM personen;'
+    )
+    Params = <>
+    left = 205
+    top = 10
+  end
+end

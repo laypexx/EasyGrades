@@ -1,0 +1,155 @@
+object Form_RemGrade: TForm_RemGrade
+  Left = 1058
+  Height = 240
+  Top = 512
+  Width = 413
+  Caption = 'EasyGrades - Digitales Notenbuch'
+  ClientHeight = 240
+  ClientWidth = 413
+  OnCreate = FormCreate
+  LCLVersion = '1.8.4.0'
+  object Label1: TLabel
+    Left = 10
+    Height = 21
+    Top = 10
+    Width = 123
+    Caption = 'Note entfernen:'
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -16
+    Font.Name = '@Malgun Gothic'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label3: TLabel
+    Left = 10
+    Height = 17
+    Top = 40
+    Width = 116
+    Caption = 'Schüler auswählen:'
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -13
+    Font.Name = '@Malgun Gothic'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentColor = False
+    ParentFont = False
+  end
+  object cb_student: TComboBox
+    Left = 10
+    Height = 23
+    Top = 64
+    Width = 390
+    ItemHeight = 15
+    OnSelect = cb_studentSelect
+    TabOrder = 0
+    Text = 'Schüler auswählen...'
+  end
+  object Label5: TLabel
+    Left = 10
+    Height = 17
+    Top = 104
+    Width = 101
+    Caption = 'Note auswählen:'
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -13
+    Font.Name = '@Malgun Gothic'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentColor = False
+    ParentFont = False
+  end
+  object cb_grade: TComboBox
+    Left = 10
+    Height = 23
+    Top = 128
+    Width = 190
+    ItemHeight = 15
+    OnSelect = cb_gradeSelect
+    TabOrder = 1
+    Text = 'Note auswählen...'
+  end
+  object ed_gewichtung: TEdit
+    Left = 210
+    Height = 23
+    Top = 128
+    Width = 190
+    ReadOnly = True
+    TabOrder = 2
+  end
+  object Label6: TLabel
+    Left = 208
+    Height = 17
+    Top = 104
+    Width = 74
+    Caption = 'Gewichtung:'
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -13
+    Font.Name = '@Malgun Gothic'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentColor = False
+    ParentFont = False
+  end
+  object btn_remGrade: TButton
+    Left = 10
+    Height = 25
+    Top = 168
+    Width = 390
+    Caption = 'Note entfernen'
+    OnClick = btn_remGradeClick
+    TabOrder = 3
+  end
+  object btn_cancel: TButton
+    Left = 325
+    Height = 25
+    Top = 208
+    Width = 75
+    Caption = 'Abbrechen'
+    OnClick = btn_cancelClick
+    TabOrder = 4
+  end
+  object SQLQstudent: TSQLQuery
+    FieldDefs = <>
+    Database = FormMain.ODBCnotenbuch
+    Transaction = FormMain.SQLTransGrid
+    Params = <>
+    left = 216
+    top = 10
+  end
+  object SQLScript: TSQLScript
+    DataBase = FormMain.ODBCnotenbuch
+    Transaction = FormMain.SQLTransGrid
+    UseDollarString = False
+    Directives.Strings = (
+      'SET TERM'
+      'COMMIT WORK'
+      'COMMIT RETAIN'
+      'COMMIT'
+      '#IFDEF'
+      '#IFNDEF'
+      '#ELSE'
+      '#ENDIF'
+      '#DEFINE'
+      '#UNDEF'
+      '#UNDEFINE'
+    )
+    Terminator = ';'
+    CommentsinSQL = True
+    UseSetTerm = True
+    UseCommit = True
+    UseDefines = True
+    left = 288
+    top = 10
+  end
+  object SQLQgrade: TSQLQuery
+    FieldDefs = <>
+    Database = FormMain.ODBCnotenbuch
+    Transaction = FormMain.SQLTransGrid
+    Params = <>
+    left = 152
+    top = 88
+  end
+end

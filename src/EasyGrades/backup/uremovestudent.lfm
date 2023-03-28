@@ -1,11 +1,12 @@
 object FormRemoveStudent: TFormRemoveStudent
-  Left = 394
+  Left = 992
   Height = 240
-  Top = 236
+  Top = 753
   Width = 320
   Caption = 'EasyGrades - Digitales Notenbuch'
   ClientHeight = 240
   ClientWidth = 320
+  OnCreate = FormCreate
   LCLVersion = '1.8.4.0'
   object Label1: TLabel
     Left = 10
@@ -22,19 +23,20 @@ object FormRemoveStudent: TFormRemoveStudent
     ParentColor = False
     ParentFont = False
   end
-  object Ed_nachname: TEdit
-    Left = 128
+  object Ed_vorname: TEdit
+    Left = 88
     Height = 23
     Top = 48
-    Width = 176
+    Width = 216
+    OnChange = Ed_vornameChange
     TabOrder = 0
   end
   object Label2: TLabel
-    Left = 24
+    Left = 10
     Height = 17
-    Top = 54
-    Width = 67
-    Caption = 'Nachname:'
+    Top = 56
+    Width = 57
+    Caption = 'Vorname:'
     Font.CharSet = ANSI_CHARSET
     Font.Height = -13
     Font.Name = '@Malgun Gothic'
@@ -50,7 +52,7 @@ object FormRemoveStudent: TFormRemoveStudent
     Width = 294
     ItemHeight = 15
     TabOrder = 1
-    Text = 'cb_student'
+    Text = 'Nachnamen auswählen...'
   end
   object Label3: TLabel
     Left = 10
@@ -72,6 +74,7 @@ object FormRemoveStudent: TFormRemoveStudent
     Top = 168
     Width = 152
     Caption = 'Schüler entfernen'
+    OnClick = Btn_removeClick
     TabOrder = 2
   end
   object Btn_cancel: TButton
@@ -80,6 +83,45 @@ object FormRemoveStudent: TFormRemoveStudent
     Top = 208
     Width = 75
     Caption = 'Abbrechen'
+    OnClick = Btn_cancelClick
     TabOrder = 3
+  end
+  object SQLQremStudent: TSQLQuery
+    FieldDefs = <>
+    Database = FormMain.ODBCnotenbuch
+    Transaction = FormMain.SQLTransGrid
+    Params = <>
+    left = 168
+    top = 8
+  end
+  object DS_students: TDataSource
+    DataSet = SQLQremStudent
+    left = 197
+    top = 8
+  end
+  object SQLScript: TSQLScript
+    DataBase = FormMain.ODBCnotenbuch
+    Transaction = FormMain.SQLTransGrid
+    UseDollarString = False
+    Directives.Strings = (
+      'SET TERM'
+      'COMMIT WORK'
+      'COMMIT RETAIN'
+      'COMMIT'
+      '#IFDEF'
+      '#IFNDEF'
+      '#ELSE'
+      '#ENDIF'
+      '#DEFINE'
+      '#UNDEF'
+      '#UNDEFINE'
+    )
+    Terminator = ';'
+    CommentsinSQL = True
+    UseSetTerm = True
+    UseCommit = True
+    UseDefines = True
+    left = 226
+    top = 8
   end
 end

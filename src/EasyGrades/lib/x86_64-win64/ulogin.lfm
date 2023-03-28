@@ -1,10 +1,10 @@
 object FormLogin: TFormLogin
-  Left = 1219
-  Height = 518
-  Top = 37
+  Left = 1251
+  Height = 534
+  Top = 13
   Width = 672
   Caption = 'EasyGrades - Digitales Notenbuch'
-  ClientHeight = 518
+  ClientHeight = 534
   ClientWidth = 672
   OnActivate = FormActivate
   LCLVersion = '1.8.4.0'
@@ -3606,7 +3606,6 @@ object FormLogin: TFormLogin
     ItemHeight = 15
     Items.Strings = (
       'Admin'
-      'Lehrer'
       'Schueler'
     )
     TabOrder = 0
@@ -3674,19 +3673,36 @@ object FormLogin: TFormLogin
   object Btn_login: TButton
     Left = 248
     Height = 33
-    Top = 448
+    Top = 472
     Width = 148
     Caption = 'Anmelden'
     OnClick = Btn_loginClick
-    TabOrder = 3
+    TabOrder = 4
   end
   object Btn_exit: TButton
     Left = 584
     Height = 25
-    Top = 480
+    Top = 496
     Width = 75
     Caption = 'Beenden'
     OnClick = Btn_exitClick
-    TabOrder = 4
+    TabOrder = 5
+  end
+  object ChB_show: TCheckBox
+    Left = 320
+    Height = 19
+    Top = 440
+    Width = 117
+    Caption = 'Passwort anzeigen'
+    OnChange = ChB_showChange
+    TabOrder = 3
+  end
+  object SQLQanmeldung: TSQLQuery
+    FieldDefs = <>
+    Database = FormMain.ODBCnotenbuch
+    Transaction = FormMain.SQLTransGrid
+    Params = <>
+    left = 488
+    top = 360
   end
 end

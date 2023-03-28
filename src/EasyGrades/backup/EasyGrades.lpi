@@ -22,12 +22,15 @@
         <FormatVersion Value="1"/>
       </local>
     </RunParams>
-    <RequiredPackages Count="1">
+    <RequiredPackages Count="2">
       <Item1>
-        <PackageName Value="LCL"/>
+        <PackageName Value="FCL"/>
       </Item1>
+      <Item2>
+        <PackageName Value="LCL"/>
+      </Item2>
     </RequiredPackages>
-    <Units Count="4">
+    <Units Count="10">
       <Unit0>
         <Filename Value="EasyGrades.lpr"/>
         <IsPartOfProject Value="True"/>
@@ -51,10 +54,51 @@
       <Unit3>
         <Filename Value="uaddstudents.pas"/>
         <IsPartOfProject Value="True"/>
-        <ComponentName Value="FormAddStudents"/>
+        <ComponentName Value="FormAddStudent"/>
+        <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="uAddStudents"/>
       </Unit3>
+      <Unit4>
+        <Filename Value="uremovestudent.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FormRemoveStudent"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit4>
+      <Unit5>
+        <Filename Value="uaccounts.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FormAccounts"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit5>
+      <Unit6>
+        <Filename Value="uaccountsclass.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="uAccountsClass"/>
+      </Unit6>
+      <Unit7>
+        <Filename Value="unote.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="uNote"/>
+      </Unit7>
+      <Unit8>
+        <Filename Value="uaddgrade.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Form_AddGrade"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="uAddGrade"/>
+      </Unit8>
+      <Unit9>
+        <Filename Value="uremovegrade.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Form_RemGrade"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="uRemoveGrade"/>
+      </Unit9>
     </Units>
   </ProjectOptions>
   <CompilerOptions>
@@ -68,6 +112,9 @@
       <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
     </SearchPaths>
     <Linking>
+      <Debugging>
+        <DebugInfoType Value="dsDwarf2Set"/>
+      </Debugging>
       <Options>
         <Win32>
           <GraphicApplication Value="True"/>
